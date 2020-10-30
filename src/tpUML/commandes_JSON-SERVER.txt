@@ -1,0 +1,2 @@
+json-server -w fakerClient.json -p 5050
+json-server -w droitProd.json -p 7777

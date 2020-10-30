@@ -1,27 +1,44 @@
-# TpUML
+Voici mon TP-UML...
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+Les commandes pour le JSON-SERVER sont dans le fichier commandes_JSON-SERVER.txt
 
-## Development server
+Mes deux fichiers pour faire mes fakers sont ceux-ci : fakerClient.ts , fakerDroitProduit
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+NOTE: Les fichiers json qui sont dans le root du projets ont ete accidentellement effaces vu que j'avais fait un rm dans le root du projet et non dans le dossier tpUML 
 
-## Code scaffolding
+CECI EST MA REFLEXION (conception)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+PHASE 1 :
 
-## Build
+1. Convertir les Boîtes (Objets) en typeScript
+2. Différencier les boîtes ==> s'il y a un nom ITALIc ou une flècle en Pointillé ==> Interface sinon c'est une classe
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+Total : 11 classes (11 fichiers typeScript); Voici ==>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+public class Droit
+public class Client
+public class Individu
+public class Entreprise
+public class CodeBar
+public class Details
+public class Contact
+public class Option
+public class Produit
 
-## Running end-to-end tests
+PHRASE 2 : Vérifier les stéréotypes <<Interface>>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+public enum ClienType
+public enum DroitType
 
-## Further help
+PHASE 3 ==> Traduire les relations
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Client one one CodeBar
+
+Client one * Droit
+
+Droit * * Produit
+
+Details one one Individu (LOSANGE PLEIN ==> Composition = R OneToOne = une instancation OBLIGATOIRE DANS LE CONSTRUCTEUR)
+
+Option one one Produit (LOSANGE VIDE ==> Agrégation = R OneToOne = PAS OBLIGATOIRE DANS LE CONSTRUCTEUR )
